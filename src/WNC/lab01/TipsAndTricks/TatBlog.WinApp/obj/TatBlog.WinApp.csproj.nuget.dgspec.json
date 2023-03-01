@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\lab01\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj": {}
+    "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj": {}
   },
   "projects": {
-    "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
+    "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj",
+        "projectUniqueName": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj",
         "projectName": "TatBlog.Core",
-        "projectPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj",
+        "projectPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\obj\\",
+        "outputPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "F:\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj": {
+    "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj",
+        "projectUniqueName": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj",
         "projectName": "TatBlog.Data",
-        "projectPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj",
+        "projectPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Data\\obj\\",
+        "outputPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +83,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
-                "projectPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj"
+              "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
+                "projectPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj"
               }
             }
           }
@@ -128,14 +128,14 @@
         }
       }
     },
-    "F:\\lab01\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj": {
+    "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\lab01\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj",
+        "projectUniqueName": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj",
         "projectName": "TatBlog.Services",
-        "projectPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj",
+        "projectPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Services\\obj\\",
+        "outputPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -152,11 +152,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
-                "projectPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj"
+              "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
+                "projectPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj"
               },
-              "F:\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj": {
-                "projectPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj"
+              "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj": {
+                "projectPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj"
               }
             }
           }
@@ -190,14 +190,14 @@
         }
       }
     },
-    "F:\\lab01\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj": {
+    "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\lab01\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
+        "projectUniqueName": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
         "projectName": "TatBlog.WinApp",
-        "projectPath": "F:\\lab01\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
+        "projectPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.WinApp\\TatBlog.WinApp.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "F:\\lab01\\TipsAndTricks\\TatBlog.WinApp\\obj\\",
+        "outputPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.WinApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -214,14 +214,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
-                "projectPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj"
+              "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj": {
+                "projectPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj"
               },
-              "F:\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj": {
-                "projectPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj"
+              "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj": {
+                "projectPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Data\\TatBlog.Data.csproj"
               },
-              "F:\\lab01\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj": {
-                "projectPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj"
+              "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj": {
+                "projectPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Services\\TatBlog.Services.csproj"
               }
             }
           }
@@ -237,6 +237,8 @@
           "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.3, )"
             }

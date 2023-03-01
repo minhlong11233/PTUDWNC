@@ -15,7 +15,7 @@ namespace TatBlog.Data.Mappings
         {
             builder.ToTable("Authors");
 
-            builder.HasKey(a => a.ID);
+            builder.HasKey(a => a.Id);
 
             builder.Property(a => a.FullName)
                 .IsRequired()
@@ -25,7 +25,7 @@ namespace TatBlog.Data.Mappings
                 .IsRequired();
             builder.Property(a => a.ImageUrl)
                 .HasMaxLength(500);
-            builder.Property(a => a.Emails)
+            builder.Property(a => a.Email)
                 .HasMaxLength(150);
             builder.Property(a => a.JoinedDate)
                 .HasColumnType("datetime");

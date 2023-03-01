@@ -9,16 +9,22 @@ using TatBlog.Data.Mappings;
 
 namespace TatBlog.Data.Contexts
 {
-    public class BlogDbContext : DbContext
-    {
-        public DbSet<Author> Author { get; set; }
-        public DbSet<Category> Category { get; set; }
-        public DbSet<Post> Posts { get; set; }
-        public DbSet<Tag> Tags { get; set; }
-        protected override void OnConfiguring(
-            DbContextOptionsBuilder optionsBuilder)
-        {
-
-        }
-    }
+public class BlogDbContext : DbContext
+   {
+       public DbSet<Author> Author { get; set; }
+       public DbSet<Category> Categories { get; set; }
+       public DbSet<Post> Posts { get; set; }
+       public DbSet<Tag> Tags { get; set; }
+       protected override void OnConfiguring(
+           DbContextOptionsBuilder optionsBuilder)
+       {
+           optionsBuilder.UseSqlServer(@"Server=DESKTOP-3QISETB;Database=TatBlog;
+                Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True");
+       }
+       protected override void OnModelCreating(ModelBuilder modelBuilder)
+       {
+           modelBuilder.ApplyConfigurationsFromAssembly(
+                typeof(CategoryMap).Assembly);
+       }
+   }
 }

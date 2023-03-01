@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj",
+      "projectUniqueName": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj",
       "projectName": "TatBlog.Core",
-      "projectPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj",
+      "projectPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\TatBlog.Core.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "F:\\lab01\\TipsAndTricks\\TatBlog.Core\\obj\\",
+      "outputPath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\TatBlog.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
