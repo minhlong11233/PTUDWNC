@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TatBlog.Core.Contracts;
-using TatBlog.Core.Entities;
 
 namespace TatBlog.Core.Entities
 {
@@ -18,6 +17,5 @@ namespace TatBlog.Core.Entities
         public string Email { get; set; }
         public string Notes { get; set; }
         public IList<Post> Posts { get; set; }
-
     }
 }

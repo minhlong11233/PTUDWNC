@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using TatBlog.Core.Contracts;
 using TatBlog.Core.DTO;
-using TatBlog.Core.DTO;
 using TatBlog.Core.Entities;
 
 namespace TatBlog.Services.Blogs;
@@ -20,7 +19,7 @@ public interface IBlogRepository
 
     Task<IList<Post>> GetPopularArticlesAsync(
         int numPosts,
-        CancellationToken cancellationToken = default);
+        CancellationToken cancellationToken= default);
 
     Task<bool> IsPostSlugExistedAsync(
         int postId, string slug,
@@ -33,8 +32,22 @@ public interface IBlogRepository
     Task<IList<CategoryItem>> GetCategoriesAsync(
         bool showOnMenu = false,
         CancellationToken cancellationToken = default);
-    Task<IPagedList<TagItem>> GetPageTagsAsync(
-        IPagingParams pagingParams, 
+
+    Task<IPagedList<TagItem>> GetPagedTagsAsync(
+        IPagingParams pagingParams,
+        CancellationToken cancellationToken = default);
+
+    Task<Tag> GetTagFromSlugAsync(
+        string slug,
+        CancellationToken cancellationToken = default);
+    Task<Category> GetCategoryFromSlugAsync(
+        string slug,
+        CancellationToken cancellationToken = default);
+
+    Task<IPagedList<Post>> GetPagedPostsAsync(
+        PostQuery condition,
+        int pageNumber = 1,
+        int pageSize = 10,
         CancellationToken cancellationToken = default);
 
 }

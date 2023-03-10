@@ -45,7 +45,7 @@ namespace TatBlog.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Emails")
+                    b.Property<string>("Email")
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
@@ -82,9 +82,6 @@ namespace TatBlog.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .HasMaxLength(500)
@@ -145,9 +142,7 @@ namespace TatBlog.Data.Migrations
                         .HasColumnType("datetime");
 
                     b.Property<bool>("Published")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
+                        .HasColumnType("bit");
 
                     b.Property<string>("ShortDescription")
                         .IsRequired()

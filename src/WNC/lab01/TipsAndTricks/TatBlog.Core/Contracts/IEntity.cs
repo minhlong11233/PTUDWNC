@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TatBlog.Core.Contracts
 {
-    public interface IEntity
+    internal interface IEntity
     {
-        int Id { get; set; } 
+        int Id { get; set; }
     }
 }

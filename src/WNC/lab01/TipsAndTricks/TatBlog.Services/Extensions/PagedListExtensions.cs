@@ -18,7 +18,7 @@ public static class PagedListExtensions
         string defaultColumn = "Id")
     {
         var column = string.IsNullOrWhiteSpace(pagingParams.SortColumn)
-            ? defaultColumn
+            ? defaultColumn 
             : pagingParams.SortColumn;
 
         var order = "ASC".Equals(

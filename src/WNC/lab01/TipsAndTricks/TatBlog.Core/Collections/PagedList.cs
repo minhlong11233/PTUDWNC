@@ -33,7 +33,7 @@ public class PagedList<T> : IPagedList<T>
 
     public int PageNumber
     {
-        get => PageIndex + 1;
+        get =>  PageIndex + 1;
         set => PageIndex = value - 1;
     }
 
@@ -81,8 +81,8 @@ public class PagedList<T> : IPagedList<T>
 
     public virtual int Count => _subset.Count;
 
-
+    
     public bool HasPreviosPage => PageIndex > 0;
 
-    #endregion
+#endregion
 }
