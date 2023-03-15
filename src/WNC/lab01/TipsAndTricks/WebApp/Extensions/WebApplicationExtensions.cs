@@ -2,6 +2,7 @@
 using TatBlog.Data.Contexts;
 using TatBlog.Data.Seeders;
 using TatBlog.Services.Blogs;
+using TatBlog.Services.Media;
 
 namespace WebApp.Extensions
 {
@@ -28,7 +29,7 @@ namespace WebApp.Extensions
 
 			builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 			builder.Services.AddScoped<IDataSeeder, DataSeeder>();
-
+			builder.Services.AddScoped<IMediaManager, LocalFileSystemMediaManager>();
 			return builder;
 
 		}

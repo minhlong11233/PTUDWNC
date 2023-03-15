@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Media\**" />
     <Compile Remove="Rss\**" />
-    <EmbeddedResource Remove="Media\**" />
     <EmbeddedResource Remove="Rss\**" />
-    <None Remove="Media\**" />
     <None Remove="Rss\**" />
   </ItemGroup>
 
