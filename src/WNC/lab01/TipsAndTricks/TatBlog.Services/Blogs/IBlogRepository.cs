@@ -49,5 +49,5 @@ public interface IBlogRepository
         int pageNumber = 1,
         int pageSize = 10,
         CancellationToken cancellationToken = default);
-
+	Task GetAuthorsAsync();
 }

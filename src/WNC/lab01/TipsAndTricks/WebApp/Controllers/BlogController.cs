@@ -35,7 +35,7 @@ namespace WebApp.Controllers
             //Lưu lại dk truy vấn để hiển thị trong View
             ViewBag.PostQuery = postQuery;
 
-            //Truyền danh sách bài viết vào View để render ra HTML
+           
             return View(postList);
         }
 
@@ -44,7 +44,7 @@ namespace WebApp.Controllers
 			[FromQuery(Name = "p")] int pageNumber = 1,
 			[FromQuery(Name = "ps")] int pageSize = 10)
 		{
-            //Tạo đối tượng chứa điều kiện truy vấn
+            
             var postQuery = new PostQuery()
             {
             

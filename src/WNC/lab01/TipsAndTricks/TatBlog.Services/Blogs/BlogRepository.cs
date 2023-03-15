@@ -31,6 +31,7 @@ public class BlogRepository : IBlogRepository
         IQueryable<Post> postsQuery = _context.Set<Post>()
             .Include(x => x.Category)
             .Include(x => x.Author);
+
         if (year > 0)
         {
             postsQuery = postsQuery.Where(x => x.PostedDate.Year == year);
@@ -223,5 +224,36 @@ public class BlogRepository : IBlogRepository
 		return await _context.Set<Category>()
 			.Where(t => t.UrlSlug == slug)
 			.FirstOrDefaultAsync(cancellationToken);
+	}
+
+	public Task GetAuthorsAsync()
+	{
+		throw new NotImplementedException();
+	}
+	public async Task<Author> GetAuthorAsync(string slug, CancellationToken cancellationToken = default)
+	{
+		return await _context.Set<Author>()
+			.FirstOrDefaultAsync(a => a.UrlSlug == slug, cancellationToken);
+	}
+
+	public async Task<Author> GetAuthorByIdAsync(int authorId)
+	{
+		return await _context.Set<Author>().FindAsync(authorId);
+	}
+
+	public async Task<Post> GetPostByIdAsync(
+		int postId, bool includeDetails = false,
+		CancellationToken cancellationToken = default)
+	{
+		if (!includeDetails)
+		{
+			return await _context.Set<Post>().FindAsync(postId);
+		}
+
+		return await _context.Set<Post>()
+			.Include(x => x.Category)
+			.Include(x => x.Author)
+			.Include(x => x.Tags)
+			.FirstOrDefaultAsync(x => x.Id == postId, cancellationToken);
 	}
 }
