@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "qCmUYieuA72GgtoAbKM5b01Jc+btZnZ0NUmFIrkiPi8V16w7Cq19IMJZZIoP94LJj/aDOxCc5aQm1qifh7y3qw==",
+  "dgSpecHash": "6afs5vJuJ/jjobvIBM6wG1hMvceIWc9AuoCUVlsGBKFPhhSqalnzJ8Iod99FWdzcl3p615QHinosVHx+G4sWkw==",
   "success": true,
   "projectFilePath": "F:\\WEDNC\\src\\WNC\\lab01\\TipsAndTricks\\WebApp\\TatBlog.WebApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ACER\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\mapster\\5.0.0\\mapster.5.0.0.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\mapster.dependencyinjection\\1.0.0\\mapster.dependencyinjection.1.0.0.nupkg.sha512",

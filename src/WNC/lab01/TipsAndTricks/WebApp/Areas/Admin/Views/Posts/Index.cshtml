@@ -48,7 +48,22 @@
 					@post.Category.Name
 				</td>
 				<td>
-					@(post.Published ? "có" : "Không")
+					<a asp-area="Admin"
+						asp-controller="Posts"
+						asp-action="SwitchPulished"
+						asp-route-id="@post.Id"
+						class="btn btn-outline-info">
+						@(post.Published ? "có" : "Không")
+					</a>
+				</td>
+				<td>
+					<a asp-area="Admin"
+						asp-controller="Posts"
+						asp-action="DeletePost"
+						asp-route-id="@post.Id"
+						class="btn btn-outline-danger">
+						Xóa
+					</a>
 				</td>
 			</tr>	
 		}

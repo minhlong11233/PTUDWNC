@@ -3,6 +3,7 @@ using TatBlog.Data.Contexts;
 using TatBlog.Data.Seeders;
 using TatBlog.Services.Blogs;
 using TatBlog.Services.Media;
+using TatBlog.WebApp.Middlewares;
 
 namespace WebApp.Extensions
 {
@@ -54,6 +55,9 @@ namespace WebApp.Extensions
 			app.UseStaticFiles();
 			app.UseRouting();
 
+			app.UseMiddleware<UserActivityMiddleware>();
+
+
 			return app;
 
 		}
@@ -76,6 +80,8 @@ namespace WebApp.Extensions
 					.GetRequiredService<ILogger<Program>>()
 					.LogError(ex, "Could not insert data into database");
 			}
+
+			
 
 			return app;
 		}

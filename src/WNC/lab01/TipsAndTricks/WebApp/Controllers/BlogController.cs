@@ -70,6 +70,18 @@ namespace WebApp.Controllers
         public IActionResult Rss()
             => Content("Nội dung sẽ được cập nhật");
 
+        public async Task<IActionResult> SwitchPublished(int id)
+        {
+            await _blogRepository.TogglePublishedFlagAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> DeletePostAsync(int id)
+        {
+            await _blogRepository.DeletePostAsync(id);
+            return RedirectToAction(nameof(Index));
+        }
+
 
     }
 }

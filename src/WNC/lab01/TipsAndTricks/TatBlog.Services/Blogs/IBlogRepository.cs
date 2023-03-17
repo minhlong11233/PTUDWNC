@@ -66,4 +66,9 @@ public interface IBlogRepository
 		Post post, IEnumerable<string> tags,
 		CancellationToken cancellationToken = default);
 
-}
+	Task<Post> TogglePublishedFlagAsync(
+		int postId, CancellationToken cancellationToken= default);
+
+	Task<bool> DeletePostAsync(
+		int postId, CancellationToken cancellationToken = default);
+	}

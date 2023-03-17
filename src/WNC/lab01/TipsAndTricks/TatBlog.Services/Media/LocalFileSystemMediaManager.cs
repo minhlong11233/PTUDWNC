@@ -7,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace TatBlog.Services.Media
 {
-	public interface LocalFileSystemMediaManager : IMediaManager
+	public class LocalFileSystemMediaManager : IMediaManager
 	{
 		private const string PictureFolder = "uploads/pictures/{0}{1}";
 		private readonly ILogger<LocalFileSystemMediaManager> _logger;
 
-		public LocalFileSystemMediaManager(ILogger<LocalFileSystemMediaManager> logger)
+		public LocalFileSystemMediaManager(
+			ILogger<LocalFileSystemMediaManager> logger)
 		{
 			_logger = logger;
 		}
@@ -73,7 +74,7 @@ namespace TatBlog.Services.Media
 		}
 
 
-		private string CreaterFilePath(
+		private string CreateFilePath(
 			string fileExt, string contentType = null)
 		{
 			return string.Format(PictureFolder,

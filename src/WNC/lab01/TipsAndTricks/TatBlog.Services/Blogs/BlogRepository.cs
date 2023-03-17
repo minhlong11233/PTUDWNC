@@ -334,4 +334,31 @@ public class BlogRepository : IBlogRepository
 
 		return post;
 	}
+
+	public async Task<bool> TogglePublishedFlagAsync(
+		int postId, CancellationToken cancellationToken = default)
+	{
+		var post = await _context.Set<Post>().FindAsync(postId);
+
+		if (post is null) return false;
+
+		post.Published = !post.Published;
+		await _context.SaveChangesAsync(cancellationToken);
+
+		return post.Published;
+	}
+
+	public async Task<bool> DeletePostAsync(
+		int postId, CancellationToken cancellationToken = default)
+	{
+		var post = await _context.Set<Post>().FindAsync(postId);
+
+		if(!post.Published) return false;
+
+		_context.Set<Post>().Remove(post);
+
+		var rowsCount = await _context.SaveChangesAsync(cancellationToken);
+		return rowsCount > 0;
+
+	}
 }
