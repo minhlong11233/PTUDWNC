@@ -9,7 +9,7 @@ using TatBlog.Core.DTO;
 using TatBlog.Core.Entities;
 using TatBlog.Data.Contexts;
 using TatBlog.Services.Extensions;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+
 
 namespace TatBlog.Services.Blogs;
 
@@ -59,7 +59,6 @@ public class BlogRepository : IBlogRepository
 			.Take(numPosts)
 			.ToListAsync(cancellationToken);
 	}
-
 	public async Task<bool> IsPostSlugExistedAsync(
 		int postId,
 		string slug,
@@ -68,8 +67,6 @@ public class BlogRepository : IBlogRepository
 		return await _context.Set<Post>()
 			.AnyAsync(x => x.Id != postId && x.UrlSlug == slug,
 			cancellationToken);
-
-
 	}
 	public async Task IncreaseViewCountAsync(
 		int postId,
@@ -87,12 +84,10 @@ public class BlogRepository : IBlogRepository
 		CancellationToken cancellationToken = default)
 	{
 		IQueryable<Category> categories = _context.Set<Category>();
-
 		if (showOnMenu)
 		{
 			categories = categories.Where(x => x.ShowOnMenu);
 		}
-
 		return await categories
 			.OrderBy(x => x.Name)
 			.Select(x => new CategoryItem()
@@ -106,14 +101,12 @@ public class BlogRepository : IBlogRepository
 			})
 			.ToListAsync(cancellationToken);
 	}
-
 	public async Task<Tag> GetTagAsync(
 		string slug, CancellationToken cancellationToken = default)
 	{
 		return await _context.Set<Tag>()
 			.FirstOrDefaultAsync(x => x.UrlSlug == slug, cancellationToken);
 	}
-
 	public async Task<IList<TagItem>> GetTagsAsync(
 		CancellationToken cancellationToken = default)
 	{
@@ -129,7 +122,6 @@ public class BlogRepository : IBlogRepository
 			})
 			.ToListAsync(cancellationToken);
 	}
-
 	public async Task<IPagedList<TagItem>> GetPagedTagsAsync(
 		IPagingParams pagingParams,
 		CancellationToken cancellationToken = default)
@@ -147,7 +139,6 @@ public class BlogRepository : IBlogRepository
 		return await tagQuery
 			.ToPagedListAsync(pagingParams, cancellationToken);
 	}
-
 	public async Task<Tag> GetTagFromSlugAsync(
 		string slug,
 		CancellationToken cancellationToken = default)
@@ -156,7 +147,6 @@ public class BlogRepository : IBlogRepository
 			.Where(t => t.UrlSlug == slug)
 			.FirstOrDefaultAsync(cancellationToken);
 	}
-
 	public async Task<IPagedList<Post>> GetPagedPostsAsync(
 		PostQuery condition,
 		int pageNumber = 1,
@@ -168,7 +158,6 @@ public class BlogRepository : IBlogRepository
 				nameof(Post.PostedDate), "DESC",
 				cancellationToken);
 	}
-
 	private IQueryable<Post> FilterPosts(PostQuery condition)
 	{
 		IQueryable<Post> posts = _context.Set<Post>()
@@ -180,65 +169,55 @@ public class BlogRepository : IBlogRepository
 		{
 			posts = posts.Where(x => x.Published);
 		}
-
 		if (condition.NotPublished)
 		{
 			posts = posts.Where(x => !x.Published);
 		}
-
 		if (condition.CategoryId > 0)
 		{
 			posts = posts.Where(x => x.CategoryId == condition.CategoryId);
 		}
-
 		if (!string.IsNullOrWhiteSpace(condition.CategorySlug))
 		{
 			posts = posts.Where(x => x.Category.UrlSlug == condition.CategorySlug);
 		}
-
 		if (condition.AuthorId > 0)
 		{
 			posts = posts.Where(x => x.AuthorId == condition.AuthorId);
 		}
-
 		if (!string.IsNullOrWhiteSpace(condition.AuthorSlug))
 		{
 			posts = posts.Where(x => x.Author.UrlSlug == condition.AuthorSlug);
 		}
-
 		if (!string.IsNullOrWhiteSpace(condition.TagSlug))
 		{
 			posts = posts.Where(x => x.Tags.Any(t => t.UrlSlug == condition.TagSlug));
 		}
-
 		if (!string.IsNullOrWhiteSpace(condition.Keyword))
 		{
-			posts = posts.Where(x => x.Title.Contains(condition.Keyword) ||
-									 x.ShortDescription.Contains(condition.Keyword) ||
-									 x.Description.Contains(condition.Keyword) ||
-									 x.Category.Name.Contains(condition.Keyword) ||
-									 x.Tags.Any(t => t.Name.Contains(condition.Keyword)));
+			posts = posts.Where
+				(x => x.Title.Contains(condition.Keyword) ||
+				x.ShortDescription.Contains(condition.Keyword) ||
+				x.Description.Contains(condition.Keyword) ||
+				x.Category.Name.Contains(condition.Keyword) ||
+				x.Tags.Any(t => t.Name.Contains(condition.Keyword)));
 		}
 
 		if (condition.YearPost > 0)
 		{
 			posts = posts.Where(x => x.PostedDate.Year == condition.YearPost);
 		}
-
 		if (condition.MonthPost > 0)
 		{
 			posts = posts.Where(x => x.PostedDate.Month == condition.MonthPost);
 		}
-
 		if (!string.IsNullOrWhiteSpace(condition.TitleSlug))
 		{
 			posts = posts.Where(x => x.UrlSlug == condition.TitleSlug);
 		}
-
 		return posts;
 
 	}
-
 	public async Task<Category> GetCategoryFromSlugAsync(
 		string slug,
 		CancellationToken cancellationToken = default)
@@ -247,7 +226,6 @@ public class BlogRepository : IBlogRepository
 			.Where(t => t.UrlSlug == slug)
 			.FirstOrDefaultAsync(cancellationToken);
 	}
-
 	public async Task<IList<AuthorItem>> GetAuthorsAsync(CancellationToken cancellationToken = default)
 	{
 		return await _context.Set<Author>()
@@ -265,7 +243,6 @@ public class BlogRepository : IBlogRepository
 			})
 			.ToListAsync();
 	}
-
 	public async Task<Post> GetPostByIdAsync(
 		int id,
 		bool includeDetail = false,
