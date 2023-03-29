@@ -21,6 +21,11 @@ namespace TatBlog.Data.Contexts
 		{
 
 		}
+
+		public BlogDbContext()
+		{
+		}
+
 		protected override void OnConfiguring(
 			DbContextOptionsBuilder optionsBuilder)
 		{

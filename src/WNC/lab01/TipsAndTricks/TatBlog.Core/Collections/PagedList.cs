@@ -19,7 +19,6 @@ public class PagedList<T> : PagingMetadata, IPagedList<T>
 	{
 		return _subset.GetEnumerator();
 	}
-
 	IEnumerator IEnumerable.GetEnumerator()
 	{
 		return GetEnumerator();

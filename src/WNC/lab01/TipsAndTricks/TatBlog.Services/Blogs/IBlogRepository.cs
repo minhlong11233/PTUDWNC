@@ -50,11 +50,10 @@ public interface IBlogRepository
 		int id,
 		bool includeDetail = false,
 		CancellationToken cancellationToken = default);
-	Task<IPagedList<Post>> GetPagedPostsAsync(
+	/*Task<IPagedList<Post>> GetPagedPostsAsync<T>(
 		PostQuery postQuery,
 		IPagingParams pagingParams,
-		CancellationToken cancellationToken = default);
-	);
+		Func<IQueryable<Post>, IQueryable<T>> mapper);*/
 	Task<Post> CreateOrUpdatePostAsync(
 		Post post, IEnumerable<string> tags,
 		CancellationToken cancellationToken = default);
@@ -62,4 +61,8 @@ public interface IBlogRepository
 		int postId, CancellationToken cancellationToken= default);
 	Task<bool> DeletePostAsync(
 		int postId, CancellationToken cancellationToken = default);
+	Task<IPagedList<T>> GetPagedPostsAsync<T>(
+		PostQuery condition,
+		IPagingParams pagingParams,
+		Func<IQueryable<Post>, IQueryable<T>> mapper);
 }
