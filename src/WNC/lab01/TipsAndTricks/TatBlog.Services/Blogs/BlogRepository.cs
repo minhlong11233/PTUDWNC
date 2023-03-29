@@ -152,6 +152,7 @@ public class BlogRepository : IBlogRepository
 		int pageNumber = 1,
 		int pageSize = 10,
 		CancellationToken cancellationToken = default)
+
 	{
 		return await FilterPosts(condition).ToPagedListAsync(
 				pageNumber, pageSize,
@@ -226,7 +227,7 @@ public class BlogRepository : IBlogRepository
 			.Where(t => t.UrlSlug == slug)
 			.FirstOrDefaultAsync(cancellationToken);
 	}
-	public async Task<IList<AuthorItem>> GetAuthorsAsync(CancellationToken cancellationToken = default)
+	/*public async Task<IList<AuthorItem>> GetAuthorsAsync(CancellationToken cancellationToken = default)
 	{
 		return await _context.Set<Author>()
 			.OrderBy(a => a.FullName)
@@ -242,7 +243,7 @@ public class BlogRepository : IBlogRepository
 				PostCount = a.Posts.Count(p => p.Published)
 			})
 			.ToListAsync();
-	}
+	}*/
 	public async Task<Post> GetPostByIdAsync(
 		int id,
 		bool includeDetail = false,
@@ -338,4 +339,5 @@ public class BlogRepository : IBlogRepository
 		return rowsCount > 0;
 
 	}
+
 }

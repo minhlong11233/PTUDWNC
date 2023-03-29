@@ -8,7 +8,7 @@ using TatBlog.Core.DTO;
 using TatBlog.Services.Blogs;
 using TatBlog.Services.Media;
 using TatBlog.WebApp.Areas.Admin.Models;
-using WebApp.Areas.Admin.Models;
+using TatBlog.WebApp.Areas.Admin.Models;
 
 namespace TatBlog.WebApp.Areas.Admin.Controllers
 {
@@ -17,23 +17,27 @@ namespace TatBlog.WebApp.Areas.Admin.Controllers
 		private readonly IMapper _mapper;
 		private readonly IBlogRepository _blogRepository;
 		private readonly IMediaManager _mediaManager;
-		private readonly ILogger _logger;
+		private readonly ILogger<PostsController> _logger;
+		private readonly IAuthorRepository _authorRepository;
+
 
 		public PostsController(
 			IBlogRepository blogRepository,
 			IMediaManager mediaManager,
+			IAuthorRepository authorRepository,
 			IMapper mapper,
 			ILogger<PostsController> logger)
 		{
 			_blogRepository = blogRepository;
 			_mediaManager = mediaManager;
+			_authorRepository = authorRepository;
 			_mapper = mapper;
 			_logger = logger;
 		}
 
 		private async Task PopulatePostFilterModelAsync( PostFilterModel model, IBlogRepository _blogRepository)
 		{
-			var authors = await _blogRepository.GetAuthorsAsync();
+			var authors = await _authorRepository.GetAuthorsAsync();
 			var categories = await _blogRepository.GetCategoriesAsync();
 
 			model.AuthorList = authors.Select(a => new SelectListItem()

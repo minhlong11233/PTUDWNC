@@ -1,7 +1,6 @@
 ﻿using TatBlog.Services.Blogs;
 using TatBlog.WebApp.Areas.Admin.Models;
 using FluentValidation;
-using WebApp.Areas.Admin.Models;
 using System.Threading;
 
 namespace TatBlog.WebApp.Validations
@@ -67,28 +66,22 @@ namespace TatBlog.WebApp.Validations
 			});
 			
 		}
-
-		
+		private async Task<bool> SetImageIfNotExist(
+		PostEditModel postModel,
+		IFormFile imageFile,
+		CancellationToken cancellationToken)
+		{
+			var post = await _blogRepository.GetPostByIdAsync(
+				postModel.Id, false, cancellationToken);
+			if (!string.IsNullOrWhiteSpace(post?.ImageUrl))
+				return true;
+			return imageFile is { Length: > 0 };
+		}
 
 		private bool HasAtLeastOneTag(
 			PostEditModel postModel, string selectedTags)
 		{
 			return postModel.GetSelectedTags().Any();
 		}
-
-		private async Task<bool> SetImageIfNotExist(
-			IFormFile imageFile,
-			CancellationToken cancellationToken,
-			PostEditModel postModel)
-		{
-			var post = await _blogRepository.GetPostByIdAsync(
-				postModel.Id, false, cancellationToken);
-
-			if (!string.IsNullOrWhiteSpace(post?.ImageUrl))
-				return true;
-
-			return imageFile is { Length: > 0 };
-		}
-
 	}
 }

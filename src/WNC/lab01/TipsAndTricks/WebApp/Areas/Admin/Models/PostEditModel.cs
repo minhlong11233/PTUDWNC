@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using TatBlog.Core.Entities;
 
-namespace WebApp.Areas.Admin.Models
+namespace TatBlog.WebApp.Areas.Admin.Models
 {
 	public class PostEditModel
 	{
@@ -50,6 +50,7 @@ namespace WebApp.Areas.Admin.Models
 		public IEnumerable<SelectListItem>? AuthorList { get; set; }
 
 		public IEnumerable<SelectListItem>? CategoryList { get; set; }
+		public object SelectedTag { get; internal set; }
 
 		public List<string> GetSelectedTags()
 		{

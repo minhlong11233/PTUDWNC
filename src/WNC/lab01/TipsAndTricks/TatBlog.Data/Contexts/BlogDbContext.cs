@@ -15,6 +15,12 @@ namespace TatBlog.Data.Contexts
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Post> Posts { get; set; }
 		public DbSet<Tag> Tags { get; set; }
+
+
+		public BlogDbContext(DbContextOptions<BlogDbContext> options) : base(options)
+		{
+
+		}
 		protected override void OnConfiguring(
 			DbContextOptionsBuilder optionsBuilder)
 		{
@@ -26,5 +32,7 @@ namespace TatBlog.Data.Contexts
 			modelBuilder.ApplyConfigurationsFromAssembly(
 				 typeof(CategoryMap).Assembly);
 		}
+
+		
 	}
 }

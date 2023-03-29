@@ -25,8 +25,8 @@ public interface IBlogRepository
 	Task IncreaseViewCountAsync(
 		int postId,
 		CancellationToken cancellationToken = default);
-	Task<IList<AuthorItem>> GetAuthorsAsync(
-		CancellationToken cancellationToken = default);
+	/*Task<IList<AuthorItem>> GetAuthorsAsync(
+		CancellationToken cancellationToken = default);*/
 	Task<IList<CategoryItem>> GetCategoriesAsync(
 		bool showOnMenu = false,
 		CancellationToken cancellationToken = default);
@@ -50,11 +50,16 @@ public interface IBlogRepository
 		int id,
 		bool includeDetail = false,
 		CancellationToken cancellationToken = default);
+	Task<IPagedList<Post>> GetPagedPostsAsync(
+		PostQuery postQuery,
+		IPagingParams pagingParams,
+		CancellationToken cancellationToken = default);
+	);
 	Task<Post> CreateOrUpdatePostAsync(
 		Post post, IEnumerable<string> tags,
 		CancellationToken cancellationToken = default);
-	Task<Post> TogglePublishedFlagAsync(
+	Task<bool> TogglePublishedFlagAsync(
 		int postId, CancellationToken cancellationToken= default);
 	Task<bool> DeletePostAsync(
 		int postId, CancellationToken cancellationToken = default);
-	}
+}

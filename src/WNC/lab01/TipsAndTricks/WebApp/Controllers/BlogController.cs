@@ -18,21 +18,21 @@ namespace WebApp.Controllers
 			[FromQuery(Name = "p")] int pageNumber = 1,
             [FromQuery(Name = "ps")] int pageSize = 10)
         {
-            //Tạo đối tượng chứa điều kiện truy vấn
+          
             var postQuery = new PostQuery()
             {
-                //Chỉ lấy bài viết có trạng thái published
+                
                 PublishedOnly = true,
 
-                //Tìm kiếm bài viết theo từ khóa
+              
                 Keyword = keyword
             };
 
-            //Truy vấn bài viết theo dk đã tạo
+         
             var postList = await _blogRepository
                 .GetPagedPostsAsync(postQuery, pageNumber, pageSize);
 
-            //Lưu lại dk truy vấn để hiển thị trong View
+          
             ViewBag.PostQuery = postQuery;
 
            
@@ -66,7 +66,6 @@ namespace WebApp.Controllers
 
         public IActionResult Contact() 
             => View();
-
         public IActionResult Rss()
             => Content("Nội dung sẽ được cập nhật");
 
@@ -75,7 +74,6 @@ namespace WebApp.Controllers
             await _blogRepository.TogglePublishedFlagAsync(id);
             return RedirectToAction(nameof(Index));
         }
-
         public async Task<IActionResult> DeletePostAsync(int id)
         {
             await _blogRepository.DeletePostAsync(id);
